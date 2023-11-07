@@ -142,11 +142,65 @@ h3 {
   border: 2px solid #a775f1;
 }
 
+
 /* components */
 .testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five'
+  ;
+
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
+}
+
+.testimonial:nth-child(1){
+  grid-area: one;
+}
+
+.testimonial:nth-child(2){
+  grid-area: two;
+}
+
+.testimonial:nth-child(3){
+  grid-area: three;
+}
+
+.testimonial:nth-child(4){
+  grid-area: four;
+}
+
+.testimonial:nth-child(5){
+  grid-area: five;
+}
+
+@media screen and (min-width:75em) {
+  .testimonial-grid {
+    grid-template-areas: 
+      'one one two five'
+      'three four four five'
+    ;
+  }
+  /* .testimonial-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .testimonial:last-child{
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  } */
 }
 
 .testimonial {
